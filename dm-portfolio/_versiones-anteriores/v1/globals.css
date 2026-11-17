@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #eef1f4;
+  --color-ink: #22344d;
+  --color-ink-deep: #1a2a3f;
+  --color-slate: #56677c;
+  --color-rule: #cfd6df;
+  --color-signal: #1f8a5b;
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* Ancho del tipo (eje "wdth" de Archivo): el nombre va expandido, los títulos un poco. */
+.wide { font-variation-settings: "wdth" 125; }
+.semiwide { font-variation-settings: "wdth" 112; }
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+}
+
+/* ---------- Versión 2 ---------- */
+.v2 {
+  /* Azul noche (las variables conservan el nombre "petrol" para no tocar los componentes) */
+  --petrol: #14213d;
+  --petrol-deep: #0c1529;
+  --amber: #f2b632;
+  --v2-text: #1a2233;
+  --v2-muted: #55627a;
+  --v2-rule: #dbe0e8;
+  --v2-bg: #f6f7fa;
+  min-height: 100vh;
+  background: var(--v2-bg);
+  color: var(--v2-text);
+  font-family: var(--font-v2-body), system-ui, sans-serif;
+}
+.v2 .display { font-family: var(--font-v2-display), system-ui, sans-serif; }
+.v2 :focus-visible { outline-color: var(--amber); }

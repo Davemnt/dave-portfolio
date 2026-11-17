@@ -1,0 +1,13 @@
+/* ---------- Versión 3: clásica y sobria ---------- */
+.v3 {
+  --v3-blue: #14213d;
+  --v3-text: #222a38;
+  --v3-muted: #5b6578;
+  --v3-rule: #e3e6ec;
+  min-height: 100vh;
+  background: #ffffff;
+  color: var(--v3-text);
+  font-family: var(--font-v3-sans), system-ui, sans-serif;
+}
+.v3 .serif { font-family: var(--font-v3-serif), Georgia, serif; }
+.v3 :focus-visible { outline-color: var(--v3-blue); }

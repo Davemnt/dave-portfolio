@@ -1,0 +1,73 @@
+/* ---------- Versión 4: oscura y moderna ---------- */
+.v4 {
+  --bg: #0a1120;
+  --surface: #111b2f;
+  --surface-2: #16223a;
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #e8eef7;
+  --muted: #94a3bb;
+  --sky: #4cc2ff;
+  --violet: #8b8cff;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-v4), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+.v4 ::selection { background: var(--sky); color: var(--bg); }
+.v4 :focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
+
+/* Brillo de fondo de la portada */
+.v4 .glow {
+  background:
+    radial-gradient(600px 400px at 80% 20%, rgba(76, 194, 255, 0.16), transparent 70%),
+    radial-gradient(500px 380px at 10% 70%, rgba(139, 140, 255, 0.12), transparent 70%);
+}
+.v4 .grad-text {
+  background: linear-gradient(100deg, #ffffff 30%, var(--sky) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.v4 .card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+.v4 .chip {
+  display: inline-block;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+/* Única animación: entrada de la portada */
+@keyframes v4-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.v4 .rise { animation: v4-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.v4 .rise-2 { animation-delay: 0.12s; }
+.v4 .rise-3 { animation-delay: 0.24s; }
+@media (prefers-reduced-motion: reduce) {
+  .v4 .rise { animation: none; }
+}
+
+/* Zona clara del medio (Qué hago, Experiencia, Formación, Proyectos).
+   Redefine los mismos colores, así las tarjetas y etiquetas se adaptan solas. */
+.v4 .light {
+  --surface: #ffffff;
+  --surface-2: #eef3fa;
+  --line: rgba(20, 33, 61, 0.1);
+  --text: #14213d;
+  --muted: #56627a;
+  --sky: #0a78ba;
+  --violet: #5b5bd6;
+  background: #f4f7fb;
+  color: var(--text);
+}
+.v4 .light .card { box-shadow: 0 1px 2px rgba(20, 33, 61, 0.04), 0 8px 24px rgba(20, 33, 61, 0.06); }
+.v4 .light .card:hover { border-color: rgba(10, 120, 186, 0.35); }
